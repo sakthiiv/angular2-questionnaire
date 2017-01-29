@@ -1,0 +1,10 @@
+<div>
+    {{ question }}
+
+    <input type="radio" (change)="createDynamicComponent()" name="option" value="yes"> Yes<br>
+    <input type="radio" (change)="createDynamicComponent()" name="option" value="no"> No<br>
+    <input type="radio" (change)="createDynamicComponent()" name="option" value="other"> Other
+
+    <dynamic-component [componentData]="componentData"></dynamic-component>
+
+</div>

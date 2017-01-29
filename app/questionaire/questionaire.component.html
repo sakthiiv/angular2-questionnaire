@@ -1,0 +1,12 @@
+﻿<div class="panel panel-primary">
+    <div class="panel-heading">
+        {{pageTitle}}
+    </div>
+    <div class="panel-body">
+        <div class="row" *ngFor='let obj of questions' style="padding-top: 15px; border-bottom: 1px solid black;">
+            <check-answer *ngIf="obj.controlType === 'checkbox'" [question]="obj.question"></check-answer>
+            <radio-answer *ngIf="obj.controlType === 'radio'" [question]="obj.question"></radio-answer>
+            <text-answer *ngIf="obj.controlType === 'textbox'"></text-answer>
+        </div>
+    </div>
+</div>
