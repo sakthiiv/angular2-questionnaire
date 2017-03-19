@@ -3,7 +3,7 @@
         {{pageTitle}}
     </div>
     <div class="panel-body">
-        <div class="row" *ngFor='let obj of questions' style="padding-top: 15px; border-bottom: 1px solid black;">
+        <div class="row" *ngFor='let obj of questions' class="questionaire">
             <check-answer *ngIf="obj.controlType === 'checkbox'" [question]="obj.question"></check-answer>
             <radio-answer *ngIf="obj.controlType === 'radio'" [question]="obj.question"></radio-answer>
             <text-answer *ngIf="obj.controlType === 'textbox'"></text-answer>

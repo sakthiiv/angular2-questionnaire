@@ -5,8 +5,9 @@ import { RadioAnswerComponent } from './radio-answer.component';
 import { IComponentData } from './component.data';
 
 @Component({
+    moduleId: module.id,    
     selector: 'check-answer',
-    templateUrl: 'app/controls/check-answer.component.html'
+    templateUrl: 'check-answer.component.html'
 })
 export class CheckAnswerComponent {
 

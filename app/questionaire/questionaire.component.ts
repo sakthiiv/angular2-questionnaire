@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-
 import { IQuestionaire } from './questionaire'
 import { QuestionaireService } from './questionaire.service';
 
 @Component({
+    moduleId: module.id,
     selector: 'questionaire',
-    templateUrl: 'app/questionaire/questionaire.component.html',
+    templateUrl: 'questionaire.component.html',
+    styleUrls: ['questionaire.component.css'],
     providers: [QuestionaireService]
 })
 
@@ -23,5 +24,5 @@ export class QuestionaireComponent {
             error => this.error = <any>error);
     }
 
-    public pageTitle: string = 'Hello World!';
+    public pageTitle: string = 'Angular2 Sample Questionaire!';
 }
