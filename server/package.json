@@ -1,0 +1,22 @@
+{
+  "name": "angular2-questionnaire-api",
+  "version": "0.1.0",
+  "main": "server.js",
+  "description": "Questionaire sample application using angular-2 api",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "jwt",
+    "auth0"
+  ],
+  "author": "Sakthivel Viswanathan",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "compression": "^1.6.1",
+    "cors": "^2.7.1",
+    "express": "^4.13.4",
+    "lodash": "^2.4.2"
+  }
+}

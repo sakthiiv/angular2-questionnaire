@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IQuestionaire } from './questionaire'
+import { IQuestionaire } from './questionaire';
 import { QuestionaireService } from './questionaire.service';
 
 @Component({
@@ -11,17 +11,17 @@ import { QuestionaireService } from './questionaire.service';
 })
 
 export class QuestionaireComponent {
-    questions: IQuestionaire[];
-    error: string;
+    queries: IQuestionaire[];
+    error: any;
 
     constructor(private _questionaireService: QuestionaireService) {
 
     }
 
     ngOnInit(): void {
-        this._questionaireService.getQuestions()
-            .subscribe(questions => this.questions = questions,
-            error => this.error = <any>error);
+        this._questionaireService.getQueries()
+            .subscribe(queries => this.queries = queries,
+            error => this.error = error);
     }
 
     public pageTitle: string = 'Angular2 Sample Questionaire!';

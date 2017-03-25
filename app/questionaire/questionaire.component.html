@@ -3,10 +3,10 @@
         {{pageTitle}}
     </div>
     <div class="panel-body">
-        <div class="row" *ngFor='let obj of questions' class="questionaire">
-            <check-answer *ngIf="obj.controlType === 'checkbox'" [question]="obj.question"></check-answer>
-            <radio-answer *ngIf="obj.controlType === 'radio'" [question]="obj.question"></radio-answer>
-            <text-answer *ngIf="obj.controlType === 'textbox'"></text-answer>
+        <div class="row" *ngFor='let query of queries' class="questionaire">
+            <check-answer *ngIf="query.controlType === 'checkbox'" [query]="query"></check-answer>
+            <radio-answer *ngIf="query.controlType === 'radio'" [query]="query"></radio-answer>
+            <text-answer *ngIf="query.controlType === 'textbox'"></text-answer>
         </div>
     </div>
 </div>

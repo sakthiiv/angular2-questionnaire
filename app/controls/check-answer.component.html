@@ -1,8 +1,9 @@
 <div>
-    {{ question }} <br />
-    
-    <input type="checkbox" (change)="createDynamicComponent()" name="option" value="option1">I am a checkbox<br>
-    <input type="checkbox" (change)="createDynamicComponent()" name="option" value="option2">I am another checkbox<br>
+    {{ query.question }} <br />
+
+    <div *ngFor="let answer of query.answers">
+        <input type="checkbox" (change)="createDynamicComponent()" name="option" [value]="answer">{{ answer }}
+    </div>
 
     <dynamic-component [componentData]="componentData"></dynamic-component>
 

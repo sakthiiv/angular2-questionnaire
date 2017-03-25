@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'health-app',
+    selector: 'about-app',
     template: '<questionaire></questionaire>'
 })
 export class AppComponent { }

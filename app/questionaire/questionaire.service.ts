@@ -8,12 +8,17 @@ import { IQuestionaire } from './questionaire';
 
 @Injectable()
 export class QuestionaireService {
-    private _questionaireUrl = 'api/questions/questions.json';
+    private _questionaireUrl = 'http://localhost:3050/api/base-queries';
 
     constructor(private _http: Http) { }
 
-    getQuestions(): Observable<IQuestionaire[]> {
-        return this._http.get(this._questionaireUrl).map((response: Response) => <IQuestionaire[]>response.json());
+    getQueries(): Observable<IQuestionaire[]> {
+        return this._http.get(this._questionaireUrl).map(
+            (response: Response) => { 
+                console.log(response.json());
+                return <IQuestionaire[]>response.json() 
+            }
+        );
     }
 
 }

@@ -1,0 +1,43 @@
+[
+    {
+        "id": 1,
+        "question": "What is your marital status?",
+        "controlType": "radio",
+        "answers": [
+            "Single",
+            "Married"
+        ]
+    },
+    {
+        "id": 2,
+        "question": "Overall, how would you rate the professional event?",
+        "controlType": "radio",
+        "answers": [
+            "Excellent",
+            "Very Good",
+            "Good",
+            "Fair",
+            "Poor"
+        ]
+    },
+    {
+        "id": 3,
+        "question": "In the past months, have you heard about our event? Please select all that apply.",
+        "controlType": "checkbox",
+        "answers": [
+            "Newspaper",
+            "Pamphlet",
+            "TV",
+            "Radio",
+            "Online Search",
+            "Coupons",
+            "Our Website"
+        ]
+    },    
+    {
+        "id": 4,
+        "question": "What do you think of this event?",
+        "controlType": "textbox",
+        "answers": []
+    }
+]

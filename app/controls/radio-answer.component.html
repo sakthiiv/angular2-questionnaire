@@ -1,9 +1,9 @@
 <div>
-    {{ question }} <br />
+    {{ query.question }} <br />
 
-    <input type="radio" (change)="createDynamicComponent()" name="option" value="yes"> Yes<br>
-    <input type="radio" (change)="createDynamicComponent()" name="option" value="no"> No<br>
-    <input type="radio" (change)="createDynamicComponent()" name="option" value="other"> Other
+    <div *ngFor="let answer of query.answers">
+        <input type="radio" (change)="createDynamicComponent()" name="option" [value]="answer"> {{ answer }}
+    </div>
 
     <dynamic-component [componentData]="componentData"></dynamic-component>
 
