@@ -2,7 +2,7 @@
     {{ query.question }} <br />
 
     <div *ngFor="let answer of query.answers">
-        <input type="checkbox" (change)="createDynamicComponent()" name="option" [value]="answer">{{ answer }}
+        <input type="checkbox" (change)="createDynamicComponent(answer)" name="option" [value]="answer">{{ answer }}
     </div>
 
     <dynamic-component [componentData]="componentData"></dynamic-component>

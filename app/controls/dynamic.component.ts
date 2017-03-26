@@ -1,8 +1,9 @@
 import { Component, ViewContainerRef, ViewChild, ReflectiveInjector, ComponentFactoryResolver, Input } from '@angular/core';
+
 import { RadioAnswerComponent } from './radio-answer.component';
 import { CheckAnswerComponent } from './check-answer.component';
-
-import { IComponentData } from './component.data';
+import { IComponentType } from './component.type';
+import { IQuestionaire } from '../questionaire/questionaire';
 
 @Component({
     selector: 'dynamic-component',
@@ -17,7 +18,7 @@ export class DynamicComponent {
 
     @ViewChild('dynamicComponentContainer', { read: ViewContainerRef }) dynamicComponentContainer: ViewContainerRef;
 
-    @Input() set componentData(data: { component: any, questions: any, level: number }) {
+    @Input() set componentData(data: { component: any, query: IQuestionaire, level: number }) {
         if (!data) {
             return;
         }
@@ -25,14 +26,12 @@ export class DynamicComponent {
         data.level++;
 
         let inputProviders = [{
-            provide: 'questions',
-            useValue: data.questions
+            provide: 'query',
+            useValue: data.query
         }, {
             provide: 'level',
             useValue: data.level
         }];
-
-        console.log(data.level);
 
         /*let inputProviders = Object.keys(data.questions).map((question) => {
             console.log(question);

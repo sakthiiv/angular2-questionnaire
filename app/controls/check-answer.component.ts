@@ -1,43 +1,38 @@
 import { Component, Injector, Input } from '@angular/core';
 
-import { RadioAnswerComponent } from './radio-answer.component';
-
-import { IComponentData } from './component.data';
+import { IComponentType } from './component.type';
 import { IQuestionaire } from '../questionaire/questionaire';
+import { QuestionaireService } from '../questionaire/questionaire.service';
+import { HelperService } from '../helper/helper.service';
 
 @Component({
     moduleId: module.id,    
     selector: 'check-answer',
-    templateUrl: 'check-answer.component.html'
+    templateUrl: 'check-answer.component.html',
+    providers: [QuestionaireService]
 })
 export class CheckAnswerComponent {
     
     @Input() query: IQuestionaire;
-    componentData: IComponentData;
+    componentData: IComponentType;
+    error: string;
     level: number;
 
-    constructor(private injector: Injector) {
-        //this.question = this.injector.get('questions');
+    constructor(private injector: Injector, private _queryService: QuestionaireService) {
+        //console.log(_helperService);
+        this.query = this.injector.get('query');
         this.level = this.injector.get('level');
-        console.log(this.level);
     }
 
-    createDynamicComponent() {
-        console.log('dynamic');
-        // Get Service and decide the component to bind
-        /*this.componentData = {
-            component: RadioAnswerComponent,
-            questions: {
-                "question": "This is a " + this.level + " level question?",
-                "controlType": "radio",
-                "answers": [
-                    "Option1",
-                    "Option2",
-                    "Option3"
-                ]
-            },
-            level: this.level
-        };*/
+    createDynamicComponent(answer: string) {
+        this._queryService.getLevelQueries({
+            id: this.query.id,
+            answer: answer
+        }).subscribe(queries => {
+            //this.componentData = this._helperService.getComponentData(queries, this.level);
+        }, error => { 
+            this.error = error 
+        });
     }
 
 }

@@ -1,6 +1,7 @@
-1) `npm install`
-    This installs the dependencies as defined in the package.json file.
-    
-2) `npm start`
-    To launch the TypeScript compiler (tsc) to compile the application and wait for changes. 
-    It also starts the lite-server and launches the browser to run the application.
+## Run the application
+
+1. Run `npm install` inside the root and server folder for api services.
+
+1. Start the backend api from server folder by running `npm start`
+
+1. To launch the app in the browser run `npm start` from a 2nd terminal inside the root folder

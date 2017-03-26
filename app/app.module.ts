@@ -16,6 +16,6 @@ import { ActionDirective } from './controls/action.directive';
   imports: [BrowserModule, HttpModule],
   declarations: [AppComponent, QuestionaireComponent, CheckAnswerComponent, RadioAnswerComponent, TextAnswerComponent, ActionDirective, DynamicComponent],
   bootstrap: [AppComponent],
-  providers: [{ provide: 'questions', useValue: {} }, { provide: 'level', useValue: 1 }]
+  providers: [{ provide: 'query', useValue: {} }, { provide: 'level', useValue: 1 }]
 })
 export class AppModule { }

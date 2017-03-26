@@ -1,15 +1,30 @@
 [
     {
-        "id": 1,
-        "question": "What is your marital status?",
+        "id": 5,
+        "rootId": 1,
+        "forAnswer": "married",
+        "question": "Do you have kids?",
         "controlType": "radio",
         "answers": [
-            "Single",
-            "Married"
+            "Yes",
+            "No"
         ]
     },
     {
-        "id": 2,
+        "id": 1,
+        "rootId": 1,
+        "forAnswer": "single",
+        "question": "How many times do you attend an event in a month?",
+        "controlType": "checkbox",
+        "answers": [
+            "Once",
+            "Twice",
+            "More than twice",
+            "None"
+        ]
+    },    
+    {
+        "id": 6,
         "question": "Overall, how would you rate the professional event?",
         "controlType": "radio",
         "answers": [
@@ -21,7 +36,7 @@
         ]
     },
     {
-        "id": 3,
+        "id": 7,
         "question": "In the past months, have you heard about our event? Please select all that apply.",
         "controlType": "checkbox",
         "answers": [
@@ -35,7 +50,7 @@
         ]
     },    
     {
-        "id": 4,
+        "id": 8,
         "question": "What do you think of this event?",
         "controlType": "textbox"
     }
