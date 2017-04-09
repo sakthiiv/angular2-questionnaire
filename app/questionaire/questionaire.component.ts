@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IQuestionaire } from './questionaire';
 import { QuestionaireService } from './questionaire.service';
+import { HelperService } from '../helper/helper.service';
 
 @Component({
     moduleId: module.id,
@@ -15,7 +16,7 @@ export class QuestionaireComponent {
     error: any;
 
     constructor(private _questionaireService: QuestionaireService) {
-
+        
     }
 
     ngOnInit(): void {

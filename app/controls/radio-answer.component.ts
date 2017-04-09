@@ -3,15 +3,13 @@ import { Component, HostListener, Injector, Input } from '@angular/core';
 import { IComponentType } from './component.type';
 import { IQuestionaire } from '../questionaire/questionaire';
 import { QuestionaireService } from '../questionaire/questionaire.service';
-import { HelperService } from '../helper/helper.service';
+import { BaseHelperService } from '../helper/base.helper.service';
 
 @Component({
     moduleId: module.id,
     selector: 'radio-answer',
-    templateUrl: 'radio-answer.component.html',
-    providers: [QuestionaireService, HelperService]
+    templateUrl: 'radio-answer.component.html'
 })
-
 export class RadioAnswerComponent {
 
     /*@HostListener('change') onChange() {
@@ -23,8 +21,7 @@ export class RadioAnswerComponent {
     level: number;
     error: string;
 
-    constructor(private injector: Injector, private _queryService: QuestionaireService, private _helperService: HelperService) {
-        console.log();
+    constructor(private injector: Injector, private _queryService: QuestionaireService, private _helperService: BaseHelperService) {
         this.query = this.injector.get('query');
         this.level = this.injector.get('level');
     }
